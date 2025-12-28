@@ -19,7 +19,6 @@ All evaluation datasets are listed at the top of `configs/tapip3d.yaml` (comment
 
 ### 1. Kubric MOVi-F (Training Dataset)
 The exact training dataset used in the paper is available at https://huggingface.co/datasets/zbww/tapip3d-kubric.
-(Upload in progress; expected completion within 24 hours.)
 
 ### 2. LSFOdyssey
 You may download the dataset from https://huggingface.co/datasets/wwcreator/LSFOdyssey.
