@@ -1,0 +1,4 @@
+name: dynamic_replica
+override_anno: null
+data_root: "../sample_data/dynamic_replica"
+split: "valid"

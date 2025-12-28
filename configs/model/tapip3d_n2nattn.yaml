@@ -1,0 +1,14 @@
+defaults:
+  - encoder: cotracker_cnn
+  - point_updater: efficient_updateformer_64track
+  - corr_feature: n2n_corr
+
+name: point_tracker_3d
+
+seq_len: 16
+norm_mode: isotropic
+corr_levels: 4
+use_local_pos_input: false
+find_knn_in_normalized_space: false
+use_uv_input: true
+center_rgb: true

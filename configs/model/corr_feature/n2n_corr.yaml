@@ -1,0 +1,11 @@
+name: knn_corr_4d
+k_neighbors: 32
+
+posenc_mlp_layers: 3
+posenc_mlp_dim: 128
+transformer_dim: 128
+transformer_num_heads: 1
+transformer_head_dim: 128
+transformer_mlp_ratio: 1.0
+
+better_depth_downsample: true

@@ -1,0 +1,4 @@
+overrides:
+  depths: ../annotations/drivetrack_full/megasam
+  extrinsics: ../annotations/drivetrack_full/megasam
+  intrinsics: ../annotations/drivetrack_full/megasam

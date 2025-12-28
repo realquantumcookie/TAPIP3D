@@ -1,0 +1,11 @@
+
+name: efficient_updateformer
+space_depth: 3
+time_depth: 3
+input_dim: 777
+hidden_size: 384
+output_dim: 5
+mlp_ratio: 4.0
+num_virtual_tracks: 64
+add_space_attn: true
+linear_layer_for_vis_conf: true

@@ -21,7 +21,6 @@ from utils.common_utils import setup_logger
 from datasets.datatypes import RawSliceData, SliceData
 from datasets.providers.base_provider import BaseDataProvider
 import datasets.data_ops as data_ops
-from line_profiler import profile
 
 _ProviderInfo = TypedDict('_ProviderInfo', {'name': str, 'weight': Union[float, int], 'stride': int, 'config': DictConfig, 'override_anno': Optional[str]})
 
@@ -155,10 +154,7 @@ class EvalDataset(BaseDataset):
     def __len__(self) -> int:
         return len(self.seq_ids)
 
-    @profile
     def __getitem__(self, index: int) -> SliceData:
-        # index = 32
-        # print ("DEBUG!!!!!!!!!!!!!!!!!\n" * 10)
         with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
             slice_data = self.data_provider.load_slice(
                 seq_id=int(self.seq_ids[index]),

@@ -13,7 +13,6 @@ import logging
 
 from datasets.utils.geometry import batch_distance_to_depth_np
 from datasets.utils.crop_utils import get_crop_args
-from line_profiler import profile
 
 logger = logging.getLogger(__name__)
 
@@ -27,7 +26,6 @@ class KubricDataProvider(BaseDataProvider):
         self.keep_static_prob: float = cfg.get("keep_static_prob", 1.0)
         logger.info(f"Loaded Kubric data from {self.data_root} with {len(self.video_folders)} sequences")
 
-    @profile
     def _load_slice(
         self, 
         seq_id: int, 

@@ -12,9 +12,11 @@ opencv-python
 rerun-sdk~=0.21
 numpy<2
 matplotlib
-imageio
+imageio[ffmpeg]
 trimesh
 huggingface_hub
 python-box[all]~=7.0
 timm
 wandb
+accelerate==1.0.1
+transformers==4.57.3

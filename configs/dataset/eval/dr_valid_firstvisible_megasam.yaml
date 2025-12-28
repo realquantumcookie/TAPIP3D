@@ -1,0 +1,21 @@
+defaults:
+  - eval_base
+
+provider_config:
+  name: dynamic_replica
+  stride: 1
+  override_anno: dr_val/megasam
+  config:
+    data_root: "../sample_data/dynamic_replica"
+    split: "valid"
+    max_trajs_per_sample: 256
+
+query_mode: first_visible
+
+transform:
+  - name: filter_edge
+    kwargs: 
+      depth_rtol: 0.02
+      normal_tol: 0.0
+  - name: set_roi
+    kwargs: {}

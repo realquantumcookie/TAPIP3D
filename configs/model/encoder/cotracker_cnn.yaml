@@ -1,0 +1,6 @@
+name: cotracker_cnn
+output_dim: 128
+stride: 4
+pretrained: True
+
+freeze_mode: none

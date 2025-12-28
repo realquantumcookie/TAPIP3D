@@ -1,0 +1,17 @@
+defaults:
+  - eval_base
+
+provider_config:
+  name: dexycb
+  stride: 1
+  override_anno: null
+  config:
+    data_root: "../sample_data/dex_ycb"
+    max_obj_points: 384
+    max_hand_points: 384
+
+query_mode: pass_through
+
+transform:
+  - name: set_roi
+    kwargs: {}

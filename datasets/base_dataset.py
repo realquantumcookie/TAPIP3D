@@ -40,14 +40,10 @@ class BaseDataset(Dataset):
 
         from datasets.train_dataset import TrainDataset
         from datasets.eval_dataset import EvalDataset
-        from datasets.delta_wrapper import DeltaDatasetWrapper
-        from datasets.delta_datasets.tapvid2d_dataset import TapVid2DDataset
         if cfg.type == "train":
             dataset_cls = TrainDataset
         elif cfg.type == "eval":
             dataset_cls = EvalDataset
-        elif cfg.type == "delta_tapvid2d":
-            dataset_cls = lambda **kwargs: DeltaDatasetWrapper(TapVid2DDataset(**kwargs))
         else:
             raise ValueError(f"Unknown dataset type: {cfg.type}")
         kwargs.pop("type")

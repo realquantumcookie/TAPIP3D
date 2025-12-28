@@ -1,0 +1,3 @@
+overrides:
+  depths: dummy_depths
+  extrinsics: dummy_extrinsics

@@ -1,0 +1,20 @@
+defaults:
+  - eval_base
+
+provider_config:
+  name: lsfodyssey
+  stride: 1
+  override_anno: lsfodyssey/megasam
+  config:
+    data_root: "../sample_data/LSFOdyssey"
+    split: "test"
+
+query_mode: pass_through
+
+transform:
+  - name: filter_edge
+    kwargs: 
+      depth_rtol: 0.02
+      normal_tol: 0.0
+  - name: set_roi
+    kwargs: {}

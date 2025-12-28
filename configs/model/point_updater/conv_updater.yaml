@@ -1,0 +1,10 @@
+name: conv_updater
+input_dim: 777
+base_filters: 64 # Is this too small?
+output_dim: 4
+n_blocks: 4
+kernel_size: 3
+groups: 1
+use_norm: true
+increasefilter_gap: 2
+use_dropout: false

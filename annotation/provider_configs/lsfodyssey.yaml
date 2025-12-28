@@ -1,0 +1,4 @@
+name: lsfodyssey
+override_anno: null
+data_root: "../sample_data/LSFOdyssey"
+split: "test"

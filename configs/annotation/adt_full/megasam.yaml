@@ -1,0 +1,4 @@
+overrides:
+  depths: ../annotations/adt_full/megasam
+  extrinsics: ../annotations/adt_full/megasam
+  intrinsics: ../annotations/adt_full/megasam

@@ -1,0 +1,4 @@
+overrides:
+  depths: ../annotations/lsfodyssey/megasam
+  extrinsics: ../annotations/lsfodyssey/megasam
+  intrinsics: ../annotations/lsfodyssey/megasam

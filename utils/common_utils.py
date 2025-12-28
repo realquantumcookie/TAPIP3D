@@ -176,3 +176,6 @@ def apply_homo_transform(coords: torch.Tensor, transform: torch.Tensor, pad_ones
     coords_transformed_homo = torch.einsum("...ij,...j->...i", transform, coords_homo)
     coords_transformed = coords_transformed_homo[..., :-1] / coords_transformed_homo[..., -1:]
     return coords_transformed
+
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)

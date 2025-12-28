@@ -18,6 +18,12 @@
 
 <img src="./media/teaser1.gif" width="100%" alt="TAPIP3D overview">
 
+
+---
+
+### 🚀 News
+- **(2025.12.28)** 🔥 We have updated the **Training** and **Evaluation** code! Check out the new sections below.
+
 ## Overview
 **TAPIP3D** is a method for long-term **feed-forward** 3D point tracking in monocular RGB and RGB-D video sequences. It introduces a 3D feature cloud representation that lifts image features into a persistent world coordinate space, canceling out camera motion and enabling accurate trajectory estimation across frames.
 
@@ -117,6 +123,26 @@ We provide one example `.npz` file at [here](https://huggingface.co/zbww/tapip3d
 ```bash
 python inference.py --input_path demo_inputs/dexycb.npz --checkpoint checkpoints/tapip3d_final.pth --resolution_factor 2
 ```
+
+## Training and Evaluation
+
+### 1. Dataset Preparation
+Please refer to [DATASET.md](DATASET.md) for instructions on preparing datasets for both training and evaluation.
+
+### 2. Training
+To start training, run:
+```bash
+bash scripts/train.sh
+```
+- `experiment_name`: The run name shown on **WandB**.
+- `experiment_id`: A unique identifier. Re-running with the same `experiment_id` will **automatically resume** training from the latest checkpoint.
+
+### 3. Evaluation
+To evaluate a checkpoint, run:
+```bash
+bash scripts/eval.sh
+```
+You can specify the model to evaluate by modifying the `checkpoint` variable in `scripts/eval.sh`.
 
 ## Citation
 If you find this project useful, please consider citing:

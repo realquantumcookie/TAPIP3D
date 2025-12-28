@@ -23,7 +23,6 @@ from datasets.providers.base_provider import BaseDataProvider
 from datasets.utils.random_utils import WeightedSampler, RandomMapping
 import datasets.data_ops as data_ops
 from utils.rerun_visualizer import setup_visualizer, log_trajectory, log_video, destroy
-from line_profiler import profile
 
 _ProviderInfo = TypedDict('_ProviderInfo', {'name': str, 'weight': Union[float, int], 'stride': int, 'config': DictConfig, 'override_anno': Optional[str]})
 
@@ -301,7 +300,6 @@ class TrainDataset(BaseDataset):
     def __len__(self) -> int:
         return self.epoch_len
 
-    @profile
     def __getitem__(self, index: int) -> SliceData:
         assert self.random_mapping is not None, "set_epoch must be called before getting items"
 
@@ -345,7 +343,6 @@ class TrainDataset(BaseDataset):
                     logger.warning(f"An error occurred while loading a sample from {self.providers_config[provider_idx]['name']}/{seq_id}")
 
                 trial += 1
-
         if self.pad_trajs and self.traj_sampling_cfg.num_traj is not None:
             if slice_data.gt_trajs_3d.shape[1] < self.traj_sampling_cfg.num_traj:
                 if slice_data.gt_trajs_3d.shape[1] * 2 < self.traj_sampling_cfg.num_traj:

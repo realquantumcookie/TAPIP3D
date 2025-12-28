@@ -1,0 +1,4 @@
+overrides:
+  depths: ../annotations/dr_valid/megasam
+  extrinsics: ../annotations/dr_valid/megasam
+  intrinsics: ../annotations/dr_valid/megasam
